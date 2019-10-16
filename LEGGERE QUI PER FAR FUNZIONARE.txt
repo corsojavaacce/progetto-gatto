@@ -1,11 +1,36 @@
 per far funzionare il progetto eseguire i seguenti passaggi:
-1)non appena aperta avviato il progetto su visual code,eseguire il comando npm install -g json-server
-2)aprire il cmd del computer
-3)andare con il comando "cd" fino alla cartella src
-4)eseguire da cmd il comando json-server --watch server.json
-5)eseguire dal terminale di Visual studio code il comando: ng serve --open (il --open può essere omesso,serve ad aprire il sito su chrome)
-6)fine
+1)estrarre il file zip in una cartella qualsiasi
+2)avviare l'ide (come visual code)
+3)cliccare su file,quindi open folder e selezionare la cartella su cui è stato salvato il progetto 
+4)non appena avviato il progetto su visual code,andare sul terminale(in basso)ed eseguire il comando npm install (accettarsi che la directory sia il nome della cartella).non appena eseguito il comando verrà creata la cartella node_modules
+5)aprire il cmd del computer
+6)andare con il comando "cd" fino alla cartella src
+7)eseguire da cmd il comando npm install -g json-server (per installare il server json che conterrà i dati)
+8)eseguire da cmd il comando json-server --watch server.json (che serve ad avviare il server.json),se è tuto ok,darà il seguente messaggio 
+ \{^_^}/ hi!
+
+  Loading server.json
+  Done
+  
+9)eseguire dal terminale di Visual studio code il comando: ng serve --open (il --open può essere omesso,serve ad aprire il sito su chrome)
+nel caso da errore,andare nella seguente directory src/app/shared/modifica/modifica.component.ts
+ed eliminare le seguenti linee
+import { timingSafeEqual } from 'crypto';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+10)fine
 
 
 il progetto si presenta con una schermata puramente estetica,serve solo a far vedere che cosa si può fare con bootstrap 
 sulla sinistra troveremo il pulsante rubrica,che ci permetterà di eseguire 2 comandi,inserisci e vedere i contatti 
+in particolare se si opera con l'iinserimento di un nuovo contatto viene presentato il form dei diversi campi,questo è stato ottenuto attraverso una componente (inserisci.ts)Questa componente lavora con l'operazione post che è stata implementata nel service
+altre operazini note sono visualizzazione,eliminazione e modifica,
+la visualizzazione (visualizzazione.ts) fa perno sulla direttiva ngFor,che permette la visualizzazione dei dati e dei 2 pulsanti,elimina e modifica,nel caso venga premuto elimina,verrà richiamato il metodo delete,altrimenti verrà richiamato un nuovo component,ovvero modifica(modifica.ts).
+User.ts è la classe che contiene gli attributi e il costruttore del nostro utente.
+
+all'interno di ogni componenti possiamo trovare il metodo onInit la cui funzione è simile costrutto,con l'unica peculiarità di essere eseguita dopo il costruttore.Il
+Il metodo subscrbe è invocato all'interno del metodo ngOnInit/Costruttore,la sua funzione è quella di rendere le funzioni asincrone,è anche essenziale per agire sui metodi GET/POST/DELETE/UPDATE.
+Il metodo ngOnDestroy viene utilizzato solo da alcuni componenti per permettere la liberazione della memoria occupata dall'operazione subscribe precedentemente scritto.
+La componente passaggio serve esclusivamente ad ottenere l'effetto del caricamento
+la componente navbar produce la barra laterle sinistra contenente le varie informazioni precedentemente descritte
+la componente dashboard,sopra descritta,si trova nella cartella pages,insieme al componente page_not_found,mentre gli altri componenti si trovano all'interno di shared
+
