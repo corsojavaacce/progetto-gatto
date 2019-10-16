@@ -1,0 +1,11 @@
+per far funzionare il progetto eseguire i seguenti passaggi:
+1)non appena aperta avviato il progetto su visual code,eseguire il comando npm install -g json-server
+2)aprire il cmd del computer
+3)andare con il comando "cd" fino alla cartella src
+4)eseguire da cmd il comando json-server --watch server.json
+5)eseguire dal terminale di Visual studio code il comando: ng serve --open (il --open può essere omesso,serve ad aprire il sito su chrome)
+6)fine
+
+
+il progetto si presenta con una schermata puramente estetica,serve solo a far vedere che cosa si può fare con bootstrap 
+sulla sinistra troveremo il pulsante rubrica,che ci permetterà di eseguire 2 comandi,inserisci e vedere i contatti 
